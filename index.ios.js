@@ -8,7 +8,7 @@ import {
   View,
   NavigatorIOS
 } from "react-native";
-import Login from "./src/Login";
+import Register from "./src/Register";
 
 class PropertyFinder extends Component {
   render() {
@@ -17,10 +17,10 @@ class PropertyFinder extends Component {
         style={styles.container}
         initialRoute={{
           title: "Property Finder",
-          component: Login
+          component: Register
         }}
       />*/
-      <Login />
+      <Register />
     );
   }
 }

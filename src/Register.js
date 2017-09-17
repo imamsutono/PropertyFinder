@@ -20,18 +20,41 @@ export default class Login extends Component {
             source={require("../resources/icon.png")}
             style={{ height: 100, width: 100 }}
           />
-          <Text style={styles.tagline}>We Found Property For Your Needs</Text>
+          <Text style={styles.tagline}>
+            Let's Find Your Dream Property Easily
+          </Text>
         </View>
         <View style={styles.row}>
           <TextInput
-            placeholder="Username or Email"
+            placeholder="Username"
             placeholderTextColor="rgba(255,255,255,0.5)"
             returnKeyType="next"
-            onSubmitEditing={() => this.passwordInput.focus()}
+            onSubmitEditing={() => this.emailInput.focus()}
+            autoCapitalize="none"
+            style={styles.inputText}
+          />
+        </View>
+        <View style={styles.row}>
+          <TextInput
+            placeholder="Email"
+            placeholderTextColor="rgba(255,255,255,0.5)"
+            returnKeyType="next"
+            onSubmitEditing={input => this.phoneInput.focus()}
             keyboardType="email-address"
             autoCapitalize="none"
             autoCorrect={false}
             style={styles.inputText}
+            ref={input => (this.emailInput = input)}
+          />
+        </View>
+        <View style={styles.row}>
+          <TextInput
+            placeholder="Phone"
+            placeholderTextColor="rgba(255,255,255,0.5)"
+            returnKeyType="next"
+            keyboardType="numeric"
+            style={styles.inputText}
+            ref={input => (this.phoneInput = input)}
           />
         </View>
         <View style={styles.row}>
@@ -46,11 +69,11 @@ export default class Login extends Component {
         </View>
         <View style={styles.row}>
           <TouchableOpacity style={styles.loginButton}>
-            <Text style={styles.loginLabel}>LOGIN</Text>
+            <Text style={styles.loginLabel}>REGISTER</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
-          <Text style={styles.toRegister}>Create new account</Text>
+          <Text style={styles.toLogin}>Login to my account</Text>
         </View>
       </KeyboardAvoidingView>
     );
@@ -71,7 +94,7 @@ const styles = StyleSheet.create({
   tagline: {
     color: "rgba(255,255,255,0.6)",
     marginTop: 8,
-    width: 150,
+    width: 160,
     textAlign: "center",
     fontSize: 16
   },
@@ -92,8 +115,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 24,
     borderColor: "#FFF",
-    borderWidth: 2,
-    marginTop: 8
+    borderWidth: 2
   },
   loginLabel: {
     color: "#1E88E5",
@@ -101,7 +123,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "600"
   },
-  toRegister: {
+  toLogin: {
     color: "#FFF",
     textAlign: "center",
     fontWeight: "600"
