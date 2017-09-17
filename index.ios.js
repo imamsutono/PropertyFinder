@@ -1,24 +1,26 @@
-'use strict';
+"use strict";
 
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
   NavigatorIOS
-} from 'react-native';
-import SearchPage from './SearchPage';
+} from "react-native";
+import Login from "./src/Login";
 
 class PropertyFinder extends Component {
   render() {
     return (
-      <NavigatorIOS
+      /*<NavigatorIOS
         style={styles.container}
         initialRoute={{
-          title: 'Carikosan',
-          component: SearchPage
-        }}/>
+          title: "Property Finder",
+          component: Login
+        }}
+      />*/
+      <Login />
     );
   }
 }
@@ -29,4 +31,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('PropertyFinder', () => PropertyFinder);
+AppRegistry.registerComponent("PropertyFinder", () => PropertyFinder);
