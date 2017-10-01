@@ -31,6 +31,7 @@ export default class Login extends Component {
             keyboardType="email-address"
             autoCapitalize="none"
             autoCorrect={false}
+            underlineColorAndroid="transparent"
             style={styles.inputText}
           />
         </View>
@@ -45,12 +46,12 @@ export default class Login extends Component {
           />
         </View>
         <View style={styles.row}>
-          <TouchableOpacity style={styles.loginButton}>
+          <TouchableOpacity
+            style={styles.loginButton}
+            onPress={this.props.navigation("SearchPage")}
+          >
             <Text style={styles.loginLabel}>LOGIN</Text>
           </TouchableOpacity>
-        </View>
-        <View style={styles.row}>
-          <Text style={styles.toRegister}>Create new account</Text>
         </View>
       </KeyboardAvoidingView>
     );
@@ -99,11 +100,6 @@ const styles = StyleSheet.create({
     color: "#1E88E5",
     textAlign: "center",
     fontSize: 18,
-    fontWeight: "600"
-  },
-  toRegister: {
-    color: "#FFF",
-    textAlign: "center",
     fontWeight: "600"
   }
 });

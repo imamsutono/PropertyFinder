@@ -10,7 +10,7 @@ import {
   StatusBar
 } from "react-native";
 
-export default class Login extends Component {
+export default class Register extends Component {
   render() {
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
@@ -68,12 +68,9 @@ export default class Login extends Component {
           />
         </View>
         <View style={styles.row}>
-          <TouchableOpacity style={styles.loginButton}>
-            <Text style={styles.loginLabel}>REGISTER</Text>
+          <TouchableOpacity style={styles.registerButton}>
+            <Text style={styles.registerLabel}>REGISTER</Text>
           </TouchableOpacity>
-        </View>
-        <View style={styles.row}>
-          <Text style={styles.toLogin}>Login to my account</Text>
         </View>
       </KeyboardAvoidingView>
     );
@@ -109,23 +106,19 @@ const styles = StyleSheet.create({
     padding: 8,
     flex: 1
   },
-  loginButton: {
+  registerButton: {
     flex: 1,
     backgroundColor: "#FAFAFA",
     justifyContent: "center",
     borderRadius: 24,
     borderColor: "#FFF",
-    borderWidth: 2
+    borderWidth: 2,
+    marginBottom: 4
   },
-  loginLabel: {
+  registerLabel: {
     color: "#1E88E5",
     textAlign: "center",
     fontSize: 18,
-    fontWeight: "600"
-  },
-  toLogin: {
-    color: "#FFF",
-    textAlign: "center",
     fontWeight: "600"
   }
 });
