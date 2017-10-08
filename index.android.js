@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { AppRegistry } from "react-native";
-import SearchPage from "./src/SearchPage";
+import { HomeTab } from "./config/router";
 
 class PropertyFinder extends Component {
   render() {
-    return <SearchPage />;
+    return <HomeTab />;
   }
 }
 

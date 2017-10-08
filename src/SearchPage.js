@@ -10,7 +10,7 @@ import {
   ActivityIndicator,
   Image
 } from "react-native";
-import { mainStyle } from "../config/MainStyle.js";
+import mainStyle from "../config/MainStyle.js";
 import SearchResults from "./SearchResults";
 
 function urlForQueryAndPage(key, value, pageNumber) {
@@ -33,7 +33,7 @@ function urlForQueryAndPage(key, value, pageNumber) {
 
 export default class SearchPage extends Component {
   static navigationOptions = {
-    title: "Property Finder"
+    title: "Home"
   };
 
   constructor(props) {
@@ -89,7 +89,6 @@ export default class SearchPage extends Component {
 
     return (
       <View style={styles.container}>
-        <Text style={styles.description}>Cari akomodasi idaman mu disini!</Text>
         <Text style={styles.description}>
           Cari berdasarkan nama atau kode pos
         </Text>
@@ -109,7 +108,11 @@ export default class SearchPage extends Component {
           />
         </View>
         <View style={styles.row}>
-          <Button title="SEARCH NOW" style={mainStyle.swagButton} />
+          <Button
+            title="SEARCH NOW"
+            style={mainStyle}
+            onPress={this._executeQuery}
+          />
         </View>
         {spinner}
         <Text style={styles.description}>{this.state.message}</Text>
